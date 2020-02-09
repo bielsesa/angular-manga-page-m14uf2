@@ -16,12 +16,12 @@ export const enum Genere{
 }
 export class Manga {
     
-    titol : string;
-    imgUrl: string;
-    genere : Genere;
-    autor:Autor;
-    constructor(titol:string, imgUrl:string,genere:Genere, autor:Autor) {
-        this.titol=titol;
+    public n : string;
+    public imgUrl: string;
+    public genere : Genere;
+    public autor:Autor;
+    constructor(n:string, imgUrl:string,genere:Genere, autor:Autor) {
+        this.n=n;
         this.imgUrl=imgUrl;
         this.genere=genere;
         this.autor=autor;

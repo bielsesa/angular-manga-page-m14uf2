@@ -1,1 +1,52 @@
-<p>manga works!</p>
+<h1>Busca tu anime!</h1>
+<input type="text" id="formulario" class="form-control my-2" (keyup)="filtrar()">
+<select id="tipoSelect" >
+    <option selected="selected" value="nom">Nom</option>
+    <option value="genere">Genere</option>
+    <option value="autor">Autor</option>
+</select>
+<button class="btn btn-info mb-2" id="boton" (click)="filtrar()">Buscar</button>
+
+<div id="resultado">
+
+</div>
+
+<div id="contingut">
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+            </tr>
+        <tbody>
+            <tr *ngFor="let manga of llistaMangas | ordenarPer:'n';index as i; first as isPrimer ">
+                <th scope="col">{{i+1}}</th>
+                <td>
+                    <h3>{{manga.n}}</h3> <img src={{manga.imgUrl}} width="330px" heigth="550px">
+                    <p>{{manga.autor_nom}} {{manga.autor_cognom}} {{manga.data}} {{manga.autor_pais}}
+                    </p>
+                </td>
+
+
+            </tr>
+        </tbody>
+
+    </table>
+    <h2>LLista Alumnes</h2>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let alumne of alumnes | ordenarPer:'n'">
+            nom : {{alumne.n}}
+        </li>
+    </ul>
+
+    <h2>LLista Mangasobject</h2>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let manga of llistaMangasJSON | ordenarPer:'n'">
+            nom : {{manga.n}}
+        </li>
+    </ul>
+
+
+</div>

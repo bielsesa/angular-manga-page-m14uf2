@@ -17,7 +17,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '../app/app.component';
 import { MangaComponent} from '../manga/manga.component';
 import { GenereComponent} from '../genere/genere.component';
 import { AutorComponent} from '../autor/autor.component';
