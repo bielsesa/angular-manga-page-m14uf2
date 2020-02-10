@@ -1,1 +1,25 @@
-<p>favorits works!</p>
+<div id="contingut">
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+            </tr>
+        <tbody>
+            <tr *ngFor="let manga of llistaFavorits2 | ordenarPer:'n';index as i; first as isPrimer ">
+                <th scope="col">{{i+1}}</th>
+                <td>
+                    <h3>{{manga.n}}</h3> <img src={{manga.imgUrl}} width="330px" heigth="550px" (click)="info(manga)">
+                    
+                </td>
+
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+</div>

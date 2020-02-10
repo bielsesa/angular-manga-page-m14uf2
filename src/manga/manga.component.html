@@ -28,8 +28,8 @@
             <tr *ngFor="let manga of llistaMangas | ordenarPer:'n';index as i; first as isPrimer ">
                 <th scope="col">{{i+1}}</th>
                 <td>
-                    <h3>{{manga.n}}</h3> <img src={{manga.imgUrl}} width="330px" heigth="550px">
-                    <p>{{manga.autor_nom}} {{manga.autor_cognom}} {{manga.data}} {{manga.autor_pais}}
+                    <h3>{{manga.n}}</h3> <img src={{manga.imgUrl}} width="330px" heigth="550px" (dblclick)="favorito(manga)">
+                    <p> {{manga.autor.nom}} {{manga.autor.cognom}} - {{manga.autor.data}} - {{manga.autor.pais}} 
                     </p>
                 </td>
 
@@ -61,25 +61,4 @@
     
 </div>
 
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    img.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-</script>
+<script src="../assets/js/prueba.js"></script>

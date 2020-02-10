@@ -127,4 +127,10 @@ export class MangaComponent implements OnInit {
     }
   }
 
+  favorito(e){
+    alert(`${e.n} afegit a favorits!`)
+    localStorage.setItem(e.n, JSON.stringify(e));
+  }
+  
+
 }
