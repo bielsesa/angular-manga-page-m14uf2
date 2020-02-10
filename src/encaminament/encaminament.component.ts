@@ -13,7 +13,7 @@
  * ORIGEN
  * Desenvolupament Aplicacions Web. Jesuïtes El Clot
  */
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 
 
@@ -21,10 +21,11 @@ import { Component } from '@angular/core';
 @Component({
   //moduleId: module.id,
   selector: 'encaminament-component',
-  templateUrl: './encaminament.component.html'
+  templateUrl: './encaminament.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class EncaminamentComponent {
-  titol = 'DAW2 demo de routing';
+  titol = 'NORMA COMICS';
 
 
 

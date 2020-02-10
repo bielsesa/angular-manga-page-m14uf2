@@ -11,7 +11,7 @@ import { AutorComponent } from '../autor/autor.component';
 import { FavoritsComponent } from '../favorits/favorits.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {M09_OrdenarPerPipe} from './m09-ordenar-per.pipe';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppEncaminamentModule,
     BrowserAnimationsModule,
-    NgbModule
+    
     
 
   ],

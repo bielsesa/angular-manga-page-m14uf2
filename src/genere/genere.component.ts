@@ -69,7 +69,10 @@ export class GenereComponent implements OnInit {
 
 
   filtrar() {
+    
     var resultado: HTMLHeadingElement = <HTMLHeadingElement>document.getElementById("resultado");
+
+
     resultado.innerHTML = '';
     var formulario: HTMLInputElement = <HTMLInputElement>document.getElementById("formulario");
     const texto = formulario.value.toLowerCase();
