@@ -48,8 +48,11 @@
           />
           <p>
             {{ manga.autor.nom }} {{ manga.autor.cognom }} -
-            {{ manga.autor.data }} - {{ manga.autor.pais }}
+            {{ manga.autor.data.toLocaleDateString() }} - {{ manga.autor.pais }}
           </p>
+          <button (click)="mostraPreview($event, manga.n)" class="bt-preview">
+            <img src="../assets/images/preview.png" />
+          </button>
         </td>
       </tr>
     </tbody>

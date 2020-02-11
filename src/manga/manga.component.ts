@@ -39,8 +39,8 @@ export class MangaComponent implements OnInit {
       { titol: "Anohana", genre: "Coming-of-age", creator: "Super Peace Busters", imgUrl: "../assets/images/anohana.jpg", description: "Anohana: The Flower We Saw That Day (あの日見た花の名前を僕達はまだ知らない。, Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai., lit. We Still Dont Know the Name of the Flower We Saw That Day.) is an 11 - episode 2011 Japanese anime television series created by Super Peace Busters(超平和バスターズ, Chō Heiwa Basutāzu), an artist collective consisting of director Tatsuyuki Nagai, screenwriter Mari Okada, and character designer Masayoshi Tanaka.The anime was produced by A - 1 Pictures and aired in Fuji TVs noitamina block between April and June 2011. It is currently licensed in North America by Aniplex of America. " },
       { titol: "Shingeki no kyojin", genre: "Action", creator: "Hajime Isayama", imgUrl: "../assets/images/shingeki.jpg", description: "Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin, lit. The Attack Titan) is a Japanese manga series both written and illustrated by Hajime Isayama. It is set in a fantasy world where humanity lives within territories surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans. " },
       { titol: "Your lie in April", genre: ["Romantic", "Drama"], creator: "Naoshi Arakawa", imgUrl: "../assets/images/yourlie.jpg", description: "Your Lie in April, known in Japan as Shigatsu wa Kimi no Uso (四月は君の嘘) or just simply Kimiuso, is a Japanese manga series written and illustrated by Naoshi Arakawa. The series was serialized in Kodansha's Monthly Shōnen Magazine from April 2011 to May 2015. An anime television series adaptation by A-1 Pictures aired from October 2014 to March 2015 on Fuji TV's Noitamina block.A live-action film adaptation of the same name was released in September 2016." },
-    ];  
-    
+    ];
+
   }
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class MangaComponent implements OnInit {
 
   filtrar() {
     var contenido: HTMLHeadingElement = <HTMLHeadingElement>document.getElementById("contingut");
-    contenido.style.visibility='hidden';
+    contenido.style.visibility = 'hidden';
     var resultado: HTMLHeadingElement = <HTMLHeadingElement>document.getElementById("resultado");
     var tipoSelect: HTMLInputElement = <HTMLInputElement>document.getElementById("tipoSelect");
     var text = tipoSelect.value;//valor del tipo de select
@@ -71,7 +71,7 @@ export class MangaComponent implements OnInit {
           <tr">
             `;
     this.llistaMangas.forEach(function (value) {
-      var i=0;
+      var i = 0;
       var nombre;
       if (text == "nom") {
         nombre = value.n.toLowerCase();
@@ -104,7 +104,7 @@ export class MangaComponent implements OnInit {
         }
       }
       //cambiando las propiedades de value podemos elegir que tipo de busqueda hacer
-      
+
     });
     resultado.innerHTML += `
     </tr>
@@ -116,12 +116,54 @@ export class MangaComponent implements OnInit {
       resultado.innerHTML += `<h3>Anime no encontrado</h3>`;
     }
     if (texto === '') {
-      contenido.style.visibility='visible';
+      contenido.style.visibility = 'visible';
     }
   }
 
-  favorito(e){
+  favorito(e) {
     alert(`${e.n} afegit a favorits!`)
     localStorage.setItem(e.n, JSON.stringify(e));
+  }
+
+  mostraPreview(event, nomManga) {
+    console.log(`Nom del manga: ${nomManga}`)
+
+    switch (nomManga) {
+      case 'Attack on titans':
+        break;
+
+      case 'Berserk':
+        break;
+
+      case 'Blue exorcist':
+        break;
+
+      case 'Boku no hero':
+        break;
+
+      case 'Detective Conan':
+        break;
+
+      case 'Dragon Ball':
+        break;
+
+      case 'Eureka Seven':
+        break;
+
+      case 'Evangelion':
+        break;
+
+      case 'One punch man':
+        break;
+
+      case 'Sword art online':
+        break;
+
+      case 'The promised neverland':
+        break;
+
+      case 'Tokyo Ghoul':
+        break;
+    }
   }
 }
