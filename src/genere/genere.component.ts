@@ -10,7 +10,6 @@ export class GenereComponent implements OnInit {
 
   public animes: Array<any>;
   public llistaMangas: Array<any>;
-  public alumnes: Array<any>;
   public mmm: Array<any>;
   public llistaMangasJSObject: Array<any>;
   public llistaMangasJSON: Array<any>;
@@ -32,14 +31,6 @@ export class GenereComponent implements OnInit {
       { titol: "Shingeki no kyojin", genre: "Action", creator: "Hajime Isayama", imgUrl: "../assets/images/shingeki.jpg", description: "Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin, lit. The Attack Titan) is a Japanese manga series both written and illustrated by Hajime Isayama. It is set in a fantasy world where humanity lives within territories surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans. " },
       { titol: "Your lie in April", genre: ["Romantic", "Drama"], creator: "Naoshi Arakawa", imgUrl: "../assets/images/yourlie.jpg", description: "Your Lie in April, known in Japan as Shigatsu wa Kimi no Uso (四月は君の嘘) or just simply Kimiuso, is a Japanese manga series written and illustrated by Naoshi Arakawa. The series was serialized in Kodansha's Monthly Shōnen Magazine from April 2011 to May 2015. An anime television series adaptation by A-1 Pictures aired from October 2014 to March 2015 on Fuji TV's Noitamina block.A live-action film adaptation of the same name was released in September 2016." },
     ];
-    this.alumnes = [
-      { n: 'Sergi', i: 11 },
-      { n: 'Joan', i: 12, },
-      { n: 'Anna', i: 13 },
-      { n: 'Jordi', i: 14 },
-      { n: 'Guille', i: 15 },
-
-    ];
 
     this.mmm = [
       { i: 11, n: 'Attack on titans' },
@@ -56,17 +47,12 @@ export class GenereComponent implements OnInit {
       { n: "Blue exorcist", imgUrl: "../assets/images/blueexorcist.jpg" },];
   }
 
-
-
-
-
   ngOnInit() {
   }
 
   getLlistaMangas() {
     return this.llistaMangas;
   }
-
 
   filtrar() {
     
@@ -87,6 +73,7 @@ export class GenereComponent implements OnInit {
         <tbody>
             <tr">
             `;
+            
     this.llistaMangas.forEach(function (value) {
       let nombre = value.genere.toLowerCase();
       if (nombre.indexOf(texto) > -1 && texto != "") {

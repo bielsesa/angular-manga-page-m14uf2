@@ -1,64 +1,86 @@
 <h1>Busca tu manga!</h1>
 <form>
-    <div class="form-group">
-        <input type="text" id="formulario" class="form-control my-2" (keyup)="filtrar()">
-        <select id="tipoSelect">
-            <option selected="selected" value="nom">Nom</option>
-            <option value="genere">Genere</option>
-            <option value="autor">Autor</option>
-        </select>
-        <button class="btn btn-info mb-2" id="boton" (click)="filtrar()">Buscar</button>
-    </div>
+  <div class="form-group">
+    <input
+      type="text"
+      id="formulario"
+      class="form-control my-2"
+      (keyup)="filtrar()"
+    />
+    <select id="tipoSelect">
+      <option selected="selected" value="nom">Nom</option>
+      <option value="genere">Genere</option>
+      <option value="autor">Autor</option>
+    </select>
+    <button class="btn btn-info mb-2" id="boton" (click)="filtrar()">
+      Buscar
+    </button>
+  </div>
 </form>
 
-
-<div id="resultado">
-
-</div>
+<div id="resultado"></div>
 
 <div id="contingut">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+      </tr>
+    </thead>
 
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nom</th>
-            </tr>
-        <tbody>
-            <tr *ngFor="let manga of llistaMangas | ordenarPer:'n';index as i; first as isPrimer ">
-                <th scope="col">{{i+1}}</th>
-                <td>
-                    <h3>{{manga.n}}</h3> <img src={{manga.imgUrl}} width="330px" heigth="550px" (dblclick)="favorito(manga)">
-                    <p> {{manga.autor.nom}} {{manga.autor.cognom}} - {{manga.autor.data}} - {{manga.autor.pais}} 
-                    </p>
-                </td>
-
-
-            </tr>
-        </tbody>
-
-    </table>
-
-
-
+    <tbody>
+      <tr
+        *ngFor="
+          let manga of llistaMangas | ordenarPer: 'n';
+          index as i;
+          first as isPrimer
+        "
+      >
+        <th scope="col">{{ i + 1 }}</th>
+        <td>
+          <h3>{{ manga.n }}</h3>
+          <img
+            src="{{ manga.imgUrl }}"
+            width="330px"
+            heigth="550px"
+            (dblclick)="favorito(manga)"
+          />
+          <p>
+            {{ manga.autor.nom }} {{ manga.autor.cognom }} -
+            {{ manga.autor.data }} - {{ manga.autor.pais }}
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div id="prueba">
-    <h2>Image Modal</h2>
-    <p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
-    <p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on.
-        Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+  <h2>Image Modal</h2>
+  <p>
+    In this example, we use CSS to create a modal (dialog box) that is hidden by
+    default.
+  </p>
+  <p>
+    We use JavaScript to trigger the modal and to display the current image
+    inside the modal when it is clicked on. Also note that we use the value from
+    the image's "alt" attribute as an image caption text inside the modal.
+  </p>
 
-    <img id="myImg" src="../assets/images/img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
+  <img
+    id="myImg"
+    src="../assets/images/img_snow.jpg"
+    alt="Snow"
+    style="width:100%;max-width:300px"
+  />
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-
-    
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" />
+    <div id="caption"></div>
+  </div>
 </div>
 
 <script src="../assets/js/prueba.js"></script>

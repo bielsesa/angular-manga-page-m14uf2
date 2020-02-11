@@ -17,18 +17,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from '../app/app.component';
 import { MangaComponent} from '../manga/manga.component';
 import { GenereComponent} from '../genere/genere.component';
 import { AutorComponent} from '../autor/autor.component';
 import { FavoritsComponent} from '../favorits/favorits.component';
+import { PreviewComponent } from 'preview/preview.component';
 
 const encaminaments: Routes = [
-  // { path: '', redirectTo: '/salutacio', pathMatch: 'full' },
+  { path: '', redirectTo: 'manga', pathMatch: 'full' },
   { path: 'manga', component: MangaComponent },
   { path: 'genere', component: GenereComponent },
   { path: 'autor', component: AutorComponent },
   { path: 'favorits', component: FavoritsComponent },
+  { path: 'preview', component: PreviewComponent },
 ];
 
 @NgModule({
