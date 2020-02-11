@@ -11,6 +11,7 @@ import { AutorComponent } from '../autor/autor.component';
 import { FavoritsComponent } from '../favorits/favorits.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { M09_OrdenarPerPipe } from './m09-ordenar-per.pipe';
+import { PreviewDirective } from '../app/pv.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { M09_OrdenarPerPipe } from './m09-ordenar-per.pipe';
     GenereComponent,
     AutorComponent,
     FavoritsComponent,
-    M09_OrdenarPerPipe
+    M09_OrdenarPerPipe,
+    PreviewDirective
   ],
   entryComponents: [
     PreviewComponent

@@ -4,5 +4,5 @@ import { Directive, ViewContainerRef } from "@angular/core";
   selector: "[preview-host]"
 })
 export class PreviewDirective {
-  constructor(public viewContainerRef: ViewContainerRef) {}
+  constructor(public viewContainerRef: ViewContainerRef) { }
 }
