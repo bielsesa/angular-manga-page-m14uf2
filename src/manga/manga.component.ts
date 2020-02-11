@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 import { Manga, Genere } from '../classes/Manga';
 import { Autor } from '../classes/Autor';
+import { PreviewComponent } from 'preview/preview.component';
 @Component({
   selector: 'app-manga',
   templateUrl: './manga.component.html',
@@ -8,12 +9,14 @@ import { Autor } from '../classes/Autor';
 })
 export class MangaComponent implements OnInit {
 
+  @ViewChild('preview-container', { read: ViewContainerRef, static: false }) previewContainer;
+  // https://angular.io/guide/dynamic-component-loader
   public animes: Array<any>;
   public llistaMangas: Array<any>;
   public mmm: Array<any>;
   public llistaMangasJSObject: Array<any>;
   public llistaMangasJSON: Array<any>;
-  constructor() {
+  constructor(private resolver: ComponentFactoryResolver) {
     this.llistaMangas = [
       new Manga("Attack on titans", "../assets/images/attackontitans.jpg", Genere.Action, new Autor("Hajime", "Isayama", new Date(2009, 9, 9), "Japon")),
       new Manga("Eureka seven", "../assets/images/eurekaseven.jpg", Genere.Sci_fi, new Autor("Jinsei", "Kataoka", new Date(2005, 4, 17), "Jeq")),
@@ -126,43 +129,57 @@ export class MangaComponent implements OnInit {
   }
 
   mostraPreview(event, nomManga) {
-    console.log(`Nom del manga: ${nomManga}`)
+    console.log(`Nom del manga: ${nomManga}`);
+    const previewFactory = this.resolver.resolveComponentFactory(PreviewComponent);
+    const previewRef = this.previewContainer.createComponent(previewFactory);
 
     switch (nomManga) {
       case 'Attack on titans':
+        previewRef.instance.baseImgName = "../assets/images/aot";
         break;
 
       case 'Berserk':
+        previewRef.instance.baseImgName = "../assets/images/berserk";
         break;
 
       case 'Blue exorcist':
+        previewRef.instance.baseImgName = "../assets/images/be";
         break;
 
       case 'Boku no hero':
+        previewRef.instance.baseImgName = "../assets/images/bnh";
         break;
 
       case 'Detective Conan':
+        previewRef.instance.baseImgName = "../assets/images/dc";
         break;
 
       case 'Dragon Ball':
+        previewRef.instance.baseImgName = "../assets/images/db";
         break;
 
       case 'Eureka Seven':
+        previewRef.instance.baseImgName = "../assets/images/es";
         break;
 
       case 'Evangelion':
+        previewRef.instance.baseImgName = "../assets/images/evgl";
         break;
 
       case 'One punch man':
+        previewRef.instance.baseImgName = "../assets/images/opm";
         break;
 
       case 'Sword art online':
+        previewRef.instance.baseImgName = "../assets/images/sao";
         break;
 
       case 'The promised neverland':
+        previewRef.instance.baseImgName = "../assets/images/tpn";
         break;
 
       case 'Tokyo Ghoul':
+        previewRef.instance.baseImgName = "../assets/images/tg";
         break;
     }
   }
