@@ -1,4 +1,4 @@
-<h1>Busca tu manga!</h1>
+<h1>Busca el teu manga!</h1>
 <form>
   <div class="form-group">
     <input
@@ -21,6 +21,10 @@
 <div id="resultado"></div>
 
 <div id="contingut">
+  <app-dialog [(visible)]="showDialog">
+    <h1>{{ mangaFavNom }} s'ha afegit a favorits!</h1>
+    <button (click)="showDialog = !showDialog" class="btn">Close</button>
+  </app-dialog>
   <ng-template preview-host class="preview-container"></ng-template>
   <table class="table table-striped">
     <thead class="thead-dark">

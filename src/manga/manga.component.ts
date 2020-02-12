@@ -132,8 +132,13 @@ export class MangaComponent implements OnInit, OnDestroy {
     }
   }
 
+  showDialog : boolean = false;
+  mangaFavNom : string = "";
+
   favorito(e) {
-    alert(`${e.n} afegit a favorits!`)
+    // alert(`${e.n} afegit a favorits!`)
+    this.mangaFavNom = e.n;
+    this.showDialog = true;
     localStorage.setItem(e.n, JSON.stringify(e));
   }
 

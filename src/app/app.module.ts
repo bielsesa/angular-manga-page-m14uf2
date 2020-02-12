@@ -12,6 +12,7 @@ import { FavoritsComponent } from '../favorits/favorits.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { M09_OrdenarPerPipe } from './m09-ordenar-per.pipe';
 import { PreviewDirective } from '../app/pv.directive';
+import { AppDialogComponent } from './app-dialog/app-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PreviewDirective } from '../app/pv.directive';
     AutorComponent,
     FavoritsComponent,
     M09_OrdenarPerPipe,
-    PreviewDirective
+    PreviewDirective,
+    AppDialogComponent
   ],
   entryComponents: [
     PreviewComponent
