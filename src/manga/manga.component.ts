@@ -5,10 +5,12 @@ import { PreviewComponent } from 'preview/preview.component';
 import { PreviewDirective } from 'app/pv.directive';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { fadeAnimation } from 'animations';
 @Component({
   selector: 'app-manga',
   templateUrl: './manga.component.html',
-  styleUrls: ['./manga.component.css']
+  styleUrls: ['./manga.component.css'],
+  animations: [fadeAnimation]
 })
 export class MangaComponent implements OnInit, OnDestroy {
 
@@ -22,25 +24,25 @@ export class MangaComponent implements OnInit, OnDestroy {
   private subs: Subscription[] = [];
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
     this.llistaMangas = [
-      new Manga("Attack on titans", "../assets/images/attackontitans.jpg", Genere.Action, new Autor("Hajime", "Isayama", new Date(2009, 9, 9), "Japon")),
-      new Manga("Eureka seven", "../assets/images/eurekaseven.jpg", Genere.Sci_fi, new Autor("Jinsei", "Kataoka", new Date(2005, 4, 17), "Jeq")),
-      new Manga("The promised neverland", "../assets/images/thepromisedneverland.jpg", Genere.Adventure, new Autor("Kaiu", "Shirai", new Date(2019, 10, 1), "Japon")),
-      new Manga("Blue exorcist", "../assets/images/blueexorcist.jpg", Genere.Fantasy, new Autor("Kazue", "Kato", new Date(2009, 4, 4), "Japon")),
-      new Manga("Evangelion", "../assets/images/evangelion.jpg", Genere.Sci_fi, new Autor("Hideaki", "Anno", new Date(1995, 10, 4), "Japon")),
-      new Manga("Tokyo Ghoul", "../assets/images/tokyoghoul.jpg", Genere.Horror, new Autor("Sui", "Ishida", new Date(2011, 9, 18), "Japon")),
-      new Manga("Boku no hero", "../assets/images/bokunohero.jpg", Genere.Action, new Autor("Kohei", "Horikoshi", new Date(2014, 7, 7), "Japon")),
-      new Manga("Sword art online", "../assets/images/sao.jpg", Genere.Sci_fi, new Autor("Sui", "Ishida", new Date(2013, 12, 31), "Japon")),
-      new Manga("Berserk", "../assets/images/berserk.jpg", Genere.Magic, new Autor("Kentaro", "Miuda", new Date(1997, 10, 7), "Japon")),
-      new Manga("Detective Conan", "../assets/images/conan.jpg", Genere.Action, new Autor("Gosho", "Aoyama", new Date(1994, 1, 19), "Japon")),
-      new Manga("One punch man", "../assets/images/opm.jpg", Genere.Action, new Autor("One", "-", new Date(2009, 7, 3), "Japon")),
-      new Manga("Dragon Ball", "../assets/images/db.jpeg", Genere.Action, new Autor("Akira", "Toruyama", new Date(1984, 11, 20), "Japon"))
+      new Manga("Attack on titans", "../assets/images/attackontitans.jpg", Genere.Action, new Autor("Hajime", "Isayama", new Date(2009, 9, 9), "Japó")),
+      new Manga("Eureka seven", "../assets/images/eurekaseven.jpg", Genere.Sci_fi, new Autor("Jinsei", "Kataoka", new Date(2005, 4, 17), "Japó")),
+      new Manga("The promised neverland", "../assets/images/thepromisedneverland.jpg", Genere.Adventure, new Autor("Kaiu", "Shirai", new Date(2019, 10, 1), "Japó")),
+      new Manga("Blue exorcist", "../assets/images/blueexorcist.jpg", Genere.Fantasy, new Autor("Kazue", "Kato", new Date(2009, 4, 4), "Japó")),
+      new Manga("Evangelion", "../assets/images/evangelion.jpg", Genere.Sci_fi, new Autor("Hideaki", "Anno", new Date(1995, 10, 4), "Japó")),
+      new Manga("Tokyo Ghoul", "../assets/images/tokyoghoul.jpg", Genere.Horror, new Autor("Sui", "Ishida", new Date(2011, 9, 18), "Japó")),
+      new Manga("Boku no hero", "../assets/images/bokunohero.jpg", Genere.Action, new Autor("Kohei", "Horikoshi", new Date(2014, 7, 7), "Japó")),
+      new Manga("Sword art online", "../assets/images/sao.jpg", Genere.Sci_fi, new Autor("Sui", "Ishida", new Date(2013, 12, 31), "Japó")),
+      new Manga("Berserk", "../assets/images/berserk.jpg", Genere.Magic, new Autor("Kentaro", "Miuda", new Date(1997, 10, 7), "Japó")),
+      new Manga("Detective Conan", "../assets/images/conan.jpg", Genere.Action, new Autor("Gosho", "Aoyama", new Date(1994, 1, 19), "Japó")),
+      new Manga("One punch man", "../assets/images/opm.jpg", Genere.Action, new Autor("One", "-", new Date(2009, 7, 3), "Japó")),
+      new Manga("Dragon Ball", "../assets/images/db.jpeg", Genere.Action, new Autor("Akira", "Toruyama", new Date(1984, 11, 20), "Japó"))
     ];
 
     this.llistaMangasJSObject = [
-      { titol: "Attack on titans", imgUrl: "../assets/images/attackontitans.jpg", genere: Genere.Action, autor_nom: "Hajime", autor_cognom: "Isayama", data: new Date(2009, 9, 9), autor_pais: "Japon" },
-      { titol: "Eureka seven", imgUrl: "../assets/images/eurekaseven.jpg", genere: Genere.Sci_fi, autor_nom: "Jinsei", autor_cognom: "Kataoka", data: new Date(2005, 4, 17), autor_pais: "Japon" },
-      { titol: "The promised neverland", imgUrl: "../assets/images/thepromisedneverland.jpg", genere: Genere.Adventure, autor_nom: "Kaiu", autor_cognom: "Shirai", data: new Date(2019, 10, 1), autor_pais: "Japon" },
-      { titol: "Blue exorcist", imgUrl: "../assets/images/blueexorcist.jpg", genere: Genere.Fantasy, autor_nom: "	Kazue", autor_cognom: "Kato", data: new Date(2009, 4, 4), autor_pais: "Japon" }];
+      { titol: "Attack on titans", imgUrl: "../assets/images/attackontitans.jpg", genere: Genere.Action, autor_nom: "Hajime", autor_cognom: "Isayama", data: new Date(2009, 9, 9), autor_pais: "Japó" },
+      { titol: "Eureka seven", imgUrl: "../assets/images/eurekaseven.jpg", genere: Genere.Sci_fi, autor_nom: "Jinsei", autor_cognom: "Kataoka", data: new Date(2005, 4, 17), autor_pais: "Japó" },
+      { titol: "The promised neverland", imgUrl: "../assets/images/thepromisedneverland.jpg", genere: Genere.Adventure, autor_nom: "Kaiu", autor_cognom: "Shirai", data: new Date(2019, 10, 1), autor_pais: "Japó" },
+      { titol: "Blue exorcist", imgUrl: "../assets/images/blueexorcist.jpg", genere: Genere.Fantasy, autor_nom: "	Kazue", autor_cognom: "Kato", data: new Date(2009, 4, 4), autor_pais: "Japó" }];
 
     this.animes = [
       { titol: "Anohana", genre: "Coming-of-age", creator: "Super Peace Busters", imgUrl: "../assets/images/anohana.jpg", description: "Anohana: The Flower We Saw That Day (あの日見た花の名前を僕達はまだ知らない。, Ano Hi Mita Hana no Namae o Bokutachi wa Mada Shiranai., lit. We Still Dont Know the Name of the Flower We Saw That Day.) is an 11 - episode 2011 Japanese anime television series created by Super Peace Busters(超平和バスターズ, Chō Heiwa Basutāzu), an artist collective consisting of director Tatsuyuki Nagai, screenwriter Mari Okada, and character designer Masayoshi Tanaka.The anime was produced by A - 1 Pictures and aired in Fuji TVs noitamina block between April and June 2011. It is currently licensed in North America by Aniplex of America. " },
@@ -142,10 +144,12 @@ export class MangaComponent implements OnInit, OnDestroy {
     localStorage.setItem(e.n, JSON.stringify(e));
   }
 
+  mangaGenere(manga) : string {
+    return Manga.genereToString(manga.genere);
+  }
+
   mostraPreview(event, nomManga) {
     console.log(`Nom del manga: ${nomManga}`);
-    // const previewFactory = this.resolver.resolveComponentFactory(PreviewComponent);
-    // const previewRef = this.previewContainer.createComponent(previewFactory);
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PreviewComponent);
     const viewContainerRef = this.previewContainer.viewContainerRef;

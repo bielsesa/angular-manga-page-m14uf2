@@ -21,15 +21,13 @@ import { MangaComponent} from '../manga/manga.component';
 import { GenereComponent} from '../genere/genere.component';
 import { AutorComponent} from '../autor/autor.component';
 import { FavoritsComponent} from '../favorits/favorits.component';
-import { PreviewComponent } from 'preview/preview.component';
 
 const encaminaments: Routes = [
   { path: '', redirectTo: 'manga', pathMatch: 'full' },
-  { path: 'manga', component: MangaComponent },
-  { path: 'genere', component: GenereComponent },
-  { path: 'autor', component: AutorComponent },
-  { path: 'favorits', component: FavoritsComponent },
-  { path: 'preview', component: PreviewComponent },
+  { path: 'manga', component: MangaComponent, data: { state: 'manga' } },
+  { path: 'genere', component: GenereComponent, data: { state: 'genere' } },
+  { path: 'autor', component: AutorComponent, data: { state: 'autor' } },
+  { path: 'favorits', component: FavoritsComponent, data: { state: 'favorits' } },
 ];
 
 @NgModule({

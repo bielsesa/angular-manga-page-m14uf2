@@ -36,6 +36,6 @@ import { AppDialogComponent } from './app-dialog/app-dialog.component';
     BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [EncaminamentComponent]
 })
 export class AppModule { }

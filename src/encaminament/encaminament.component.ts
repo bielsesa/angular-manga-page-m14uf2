@@ -14,21 +14,15 @@
  * Desenvolupament Aplicacions Web. Jesuïtes El Clot
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-
-
-
+import { fadeAnimation } from 'animations';
 
 @Component({
   //moduleId: module.id,
-  selector: 'encaminament-component',
+  selector: 'app-root',
   templateUrl: './encaminament.component.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  animations: [fadeAnimation]
 })
 export class EncaminamentComponent {
-  titol = 'NORMA COMICS';
-
-
-
-  
-
+  titol = 'NORMA COMICS';  
 }

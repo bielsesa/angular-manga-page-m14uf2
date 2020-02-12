@@ -29,7 +29,7 @@
   <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
+        <!-- <th scope="col">#</th> -->
         <th scope="col">Nom</th>
       </tr>
     </thead>
@@ -42,7 +42,7 @@
           first as isPrimer
         "
       >
-        <th scope="col">{{ i + 1 }}</th>
+        <!-- <th scope="col">{{ i + 1 }}</th> -->
         <td>
           <h3>{{ manga.n }}</h3>
           <img
@@ -53,7 +53,8 @@
           />
           <p>
             {{ manga.autor.nom }} {{ manga.autor.cognom }} -
-            {{ manga.autor.data.toLocaleDateString() }} - {{ manga.autor.pais }}
+            {{ manga.autor.data.toLocaleDateString() }} -
+            {{ manga.autor.pais }} - {{ mangaGenere(manga) }}
           </p>
           <button (click)="mostraPreview($event, manga.n)" class="bt-preview">
             <img src="../assets/images/preview.png" />
