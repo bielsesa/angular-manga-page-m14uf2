@@ -8,11 +8,15 @@ import { trigger, transition, style, animate } from '@angular/animations';
   animations: [
     trigger('preview', [
       transition('void => *', [
-        style({ transform: 'scale3d(.3, .3, .3)' }),
-        animate(100)
+        // style({ transform: 'scale3d(.3, .3, .3)' }),
+        // animate(100)
+        style({ opacity: 0, transform: 'rotateY(90deg)'}),
+        animate('0.3s', style({opacity: 1, transform: 'rotateY(0deg)'}))
       ]),
       transition('* => void', [
-        animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
+        // animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
+        style({ opacity: 1}),
+        animate('0.3s', style({opacity: 0}))
       ])
     ])
   ]
