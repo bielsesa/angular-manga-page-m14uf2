@@ -12,10 +12,13 @@ button:focus {
 }
 
 .contenidor {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   display: grid;
-  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-columns: auto 50px 44.4375rem 50px auto;
   grid-template-rows: 20% auto 20%;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
 }
 
 .left-arrow img,
@@ -52,7 +55,9 @@ button:focus {
   grid-column: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  height: 50rem;
+  /* width: 33.3125rem; */
+  margin: 5px auto;
+  /* height: 100%; */
 }
 
 .center {
@@ -60,4 +65,14 @@ button:focus {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

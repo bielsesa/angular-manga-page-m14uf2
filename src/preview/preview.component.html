@@ -1,12 +1,14 @@
-<div class="contenidor">
-  <button (click)="goLeftPage()" class="left-arrow">
-    <img src="../assets/images/left-arrow.png" />
-  </button>
-  <img src="{{ pageImgSrc }}" class="manga-page center" />
-  <button (click)="goRightPage()" class="right-arrow">
-    <img src="../assets/images/right-arrow.png" />
-  </button>
-  <button (click)="deleteSelf.emit()" class="quit-bt">
-    <img src="../assets/images/quit.png" />
-  </button>
+<div class="overlay">
+  <div class="contenidor">
+    <button (click)="goLeftPage()" class="left-arrow">
+      <img src="../assets/images/left-arrow.png" />
+    </button>
+    <img src="{{ pageImgSrc }}" class="manga-page center" />
+    <button (click)="goRightPage()" class="right-arrow">
+      <img src="../assets/images/right-arrow.png" />
+    </button>
+    <button (click)="deleteSelf.emit()" class="quit-bt">
+      <img src="../assets/images/quit.png" />
+    </button>
+  </div>
 </div>
