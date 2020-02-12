@@ -1,9 +1,21 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: "app-preview",
   templateUrl: "./preview.component.html",
-  styleUrls: ["./preview.component.css"]
+  styleUrls: ["./preview.component.css"],
+  animations: [
+    trigger('preview', [
+      transition('void => *', [
+        style({ transform: 'scale3d(.3, .3, .3)' }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
+      ])
+    ])
+  ]
 })
 export class PreviewComponent implements OnInit {
   // baseImgName serà la uri de les imatges del manga especific

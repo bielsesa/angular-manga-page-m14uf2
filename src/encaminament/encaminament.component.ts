@@ -14,7 +14,7 @@
  * Desenvolupament Aplicacions Web. Jesuïtes El Clot
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { fadeAnimation } from 'animations';
+import { fadeAnimation } from '../app/animations';
 
 @Component({
   //moduleId: module.id,

@@ -5,12 +5,10 @@ import { PreviewComponent } from 'preview/preview.component';
 import { PreviewDirective } from 'app/pv.directive';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { fadeAnimation } from 'animations';
 @Component({
   selector: 'app-manga',
   templateUrl: './manga.component.html',
-  styleUrls: ['./manga.component.css'],
-  animations: [fadeAnimation]
+  styleUrls: ['./manga.component.css']
 })
 export class MangaComponent implements OnInit, OnDestroy {
 
