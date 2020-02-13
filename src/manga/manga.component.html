@@ -56,7 +56,7 @@
             {{ manga.autor.data.toLocaleDateString() }} -
             {{ manga.autor.pais }} - {{ mangaGenere(manga) }}
           </p>
-          <button (click)="mostraPreview($event, manga.n)" class="bt-preview">
+          <button (click)="mostraPreview(event, manga.n)" class="bt-preview">
             <img src="../assets/images/preview.png" />
           </button>
         </td>
